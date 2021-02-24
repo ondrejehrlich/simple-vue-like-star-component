@@ -24,12 +24,12 @@ Import LikeComponent.vue to a parent component where you want to use it. Use `<L
 You can use this component also outside of parent Vue component. Example usage in Laravel Blade template could look like this:
 
 ```
-      <like-component
-      	    likeable="Article"
+    <like-component
+      	likeable="Article"
     	:likeable-id={{ $article->id }}
     	:likes-number={{ $article->likes()->count() }}
     	@auth :has-liked={{ auth()->user()->hasLiked($article) ? 'true' : 'false' }} @endauth
     	@guest :guest="true" @endguest
     >
-      </like-component>
+    </like-component>
 ```
